@@ -1,0 +1,440 @@
+<html lang="en-gb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- CSS Path Fixed -->
+    <link href="captcha-photos/bootstrap.css" rel="stylesheet">
+    
+    <!-- Phone me website ko fit karne ke liye Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Main 2026-S2P1</title>
+    <link rel="icon" href="data:,">
+    <script type="text/javascript">
+        window.history.forward(); function noBack() { window.history.forward(); }
+        function burstCache() {
+            if (!navigator.onLine) {
+                window.location = "../home/Index";
+            }
+        }
+        history.go(1);
+        function redirectToHome() {
+            window.location = "../logout.html";
+        }
+    </script>
+    <style>
+        .red { color: red !important; }
+        .watermark {
+            color: #d0d0d0;
+            font-size: 250px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            position: sticky;
+            width: 100%;
+            height: 0vh;
+            margin: 0px auto;
+            z-index: -1;
+            display: flex;
+            font-weight: 600;
+            top: 0.5em;
+            left: 0.5em;
+        }
+        .logoprint p { font-size: 16px !important; font-weight: 600; }
+        .leftImg { height: 55px !important; width: auto; }
+        .rightImg { height: 60px !important; width: auto; }
+        
+        .IpDiv { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            margin-top: 30px; 
+            font-weight: bold; 
+            font-size: 12px; 
+            padding-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tablecustom { 
+            border: 1px solid #ccc; 
+            width: 100% !important; 
+            min-width: 800px; /* Yeh line table ko dabne nahi degi aur scrollable banayegi */
+            font-size: 12px; 
+        }
+        .tablecustom tr { border: 1px solid #ccc; }
+        .tablecustom tr td, .tablecustom tr th { border: 1px solid #ccc; font-size: 11px; }
+        .tblinst { font-size: 12px !important; }
+
+        @media print {
+            h6 { font-size: 11px; margin-bottom: 1px; padding-bottom: 1px; }
+            .tblinst { font-size: 10px !important; }
+            .tblinst tr td { font-size: 9px !important; padding: 1px !important; }
+            .tablecustom { border: 2px solid #ccc !important; width: 100% !important; min-width: auto; border-collapse: collapse !important; empty-cells: show; font-size: 10px; }
+            .tablecustom tr { border: 2px solid #ccc !important; border-collapse: collapse !important; empty-cells: show; }
+            .tablecustom tr td, .tablecustom tr th { border: 2px solid #ccc !important; font-size: 12px !important; padding: 2px !important; border-collapse: collapse !important; empty-cells: show; padding: 2px; font-size: 10px; }
+            footer { position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 12px; }
+            .noprint { display: none !important; }
+            .logoprint p.header-text { font-size: 12px !important; font-weight: 600 !important; }
+            .leftImg { height: 55px !important; }
+            .rightImg { height: 55px !important; }
+            .container #tableToPrint { width: 100% !important; overflow-x: auto; }
+            .watermark { position: absolute; }
+            .logoprint { border-bottom: 0.3em solid #002041 !important; }
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+</head>
+<body>
+<!-- ============================================================== -->
+<!-- 1. CAPTCHA OVERLAY START -->
+<!-- ============================================================== -->
+<div id="jee-captcha-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999999; overflow-y: auto; font-family: Arial, sans-serif;">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 25px solid #002041; flex-wrap: wrap;">
+        <div style="width: 25%; min-width: 80px;"><img src="captcha-photos/mhrdnew.png" alt="mhrd" style="height: 60px; max-width: 100%;"></div>
+        <div style="width: 50%; text-align: center; color: black; min-width: 200px;">
+            <h1 style="font-size: 18px; margin: 0; font-weight: bold;">JOINT ENTRANCE EXAMINATION (Main) – 2026 SESSION 2</h1>
+            <h4 style="font-size: 15px; margin: 5px 0 0 0; font-weight: normal;">NTA SCORE: Paper 1 (B.E./B Tech.)</h4>
+        </div>
+        <div style="width: 25%; text-align: right; min-width: 80px;"><img src="captcha-photos/NTA.png" alt="NTA" style="height: 60px; max-width: 100%;"></div>
+    </div>
+
+    <div style="max-width: 800px; margin: 40px auto; padding: 0 15px;">
+        <fieldset style="border: 1px solid #ddd; padding: 0; margin: 0; border-radius: 4px;">
+            <legend style="background: #002041; color: white; width: 100%; margin: 0; padding: 8px 15px; font-size: 16px; box-sizing: border-box;">
+                <img src="captcha-photos/login.png" alt="login" style="height: 16px; margin-right: 5px; vertical-align: text-bottom;"> View Result
+            </legend>
+            <div style="padding: 30px;">
+                <div style="display: flex; margin-bottom: 20px; align-items: center; flex-wrap: wrap;">
+                    <div style="width: 100%; max-width: 40%; text-align: left; padding-right: 20px; font-weight: bold; font-size: 14px; margin-bottom: 10px;">Enter CAPTCHA <br> <span style="color: #198754; font-size: 12px; font-weight: bold;">(case sensitive)</span> :</div>
+                    <div style="width: 100%; max-width: 60%;">
+                        <input type="text" id="userInput" maxlength="6" style="width: 80%; padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+                        <br><span id="errorMsg" style="color: red; font-size: 13px; font-weight: bold; display: none; margin-top: 5px;">Invalid Captcha. Try again.</span>
+                    </div>
+                </div>
+                <div style="display: flex; margin-bottom: 20px; align-items: center; flex-wrap: wrap;">
+                    <div style="width: 100%; max-width: 40%; text-align: left; padding-right: 20px; font-weight: bold; font-size: 14px; margin-bottom: 10px;">CAPTCHA :</div>
+                    <div style="width: 100%; max-width: 60%; display: flex; align-items: center; gap: 10px;">
+                        <div id="captchaCode" style="background: #000080; padding: 5px 15px; font-size: 22px; font-family: Arial, sans-serif; letter-spacing: 3px; color: #ffffff; user-select: none; text-decoration: none;"></div>
+                        <img src="captcha-photos/Refresh.jpg" alt="Refresh" style="cursor: pointer; height: 30px;" onclick="generateCaptcha()">
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div style="width: 40%; display: none;"></div>
+                    <div style="width: 100%; text-align: center;">
+                        <button onclick="verifyNtaCaptcha()" style="background-color: #198754; color: white; border: none; padding: 8px 20px; border-radius: 4px; font-size: 14px; cursor: pointer; font-weight: bold;">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <footer style="background: #002041; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%;">
+        <p style="margin: 0; font-size: 14px;">This site is designed and hosted by NIC PEP Division. The contents are provided by NTA. For any further information, please contact NTA.</p>
+    </footer>
+</div>
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- 2. MAIN SITE RESULT START -->
+<!-- ============================================================== -->
+<div id="my-cloned-site" style="display: none;">
+    <div class="container-fluid" id="tableToPrint">
+        <div class="row logoprint" style="background-color: #ffffff; border-bottom: 2em solid #002041; margin-top: 5px; margin-bottom: 10px; padding: 5px; display: flex; align-items: center;">
+            <div class="col-4 col-lg-3 col-md-3 col-sm-3">
+                <img src="main-site-photos/mhrdnew.png" alt="mhrdnew" class="img-fluid leftImg">
+            </div>
+            <div class="col-4 col-lg-6 col-md-6 col-sm-6 text-center">
+                <p class="header-text" style="margin:0;">
+                    JOINT ENTRANCE EXAMINATION (Main) – 2026 SESSION 2    <br>
+                    NTA SCORE: Paper 1 (B.E./B Tech.)
+                </p>
+            </div>
+            <div class="col-4 col-lg-3 col-md-3 col-sm-3" style="text-align:right">
+                <img src="main-site-photos/NTA.png" alt="NTA" class="img-fluid rightImg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <table cellspacing="1" width="99%" border="0" class="table-borderless" align="center">
+                        <tbody><tr>
+                            <td align="right">
+                                <input id="print" type="button" class="noprint btn btn-danger" onclick="return window.print();" value="Print">
+                                <input type="submit" id="close" class="btn btn-info noprint" onclick="return redirectToHome();" value="Close">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpadding="3" cellspacing="1" width="100%" align="center" style=" " class="tablecustom">
+                                    <tbody><tr>
+                                        <td width="13%"><strong> Application Number</strong></td>
+                                        <td width="13%">260310195773</td>
+                                        <td width="13%"><strong>Roll No. (Session 1)</strong></td>
+                                        <td width="13%">RJ060307255</td>
+                                        <td width="14%"><strong>Roll No. (Session 2)</strong></td>
+                                        <td width="14%">RJ060203819</td>
+                                        <!-- Photo Column Fixed -->
+                                        <td rowspan="7" style="text-align:center; vertical-align:middle; width: 25%;">
+                                            <img src="main-site-photos/vinitphoto.jpg" alt="Photo" style="width: 100%; min-width: 120Cpx; max-width: 140px; height: 145px; object-fit: cover; border: none; padding: 0;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Candidate's Name </strong></td>
+                                        <td colspan="5">VINIT KUMAR</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mother's Name </strong></td>
+                                        <td colspan="5">SUNITA DEVI</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Father's Name </strong></td>
+                                        <td colspan="5">SANT KUMAR</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Category</strong></td>
+                                        <td>OBC- NCL (Central List)</td>
+                                        <td colspan="2"><strong>Person with Benchmark Disability (PwBD)</strong></td>
+                                        <td colspan="2">No</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Gender</strong></td>
+                                        <td>Male</td>
+                                        <td colspan="2"><strong>Date of Birth </strong></td>
+                                        <td colspan="2">27/08/2007</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>State of Eligibility </strong></td>
+                                        <td>RAJASTHAN</td>
+                                        <td colspan="2"><strong>Nationality</strong></td>
+                                        <td colspan="2">Indian</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table cellpadding="3" cellspacing="1" width="100%" align="center" style=" " class="tablecustom">
+                                    <tbody><tr>
+                                        <th colspan="4" style="text-align:center">NTA Score for Paper 1 (B.E./B.Tech.)</th>
+                                        <td rowspan="6" style="text-align:center; vertical-align:middle; width:20%;">
+                                            <img src="main-site-photos/qrcode.jpeg" alt="QR Code" height="120px" width="120px">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:20%;"><strong>Subject</strong></td>
+                                        <td><strong>Session 1</strong></td>
+                                        <td><strong>Session 2</strong></td>
+                                        <td><strong>Final (based on best of the Two in 'Total')</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mathematics</strong></td>
+                                        <td>85.7182517</td>
+                                        <td>81.6551183</td>
+                                        <td>85.7182517</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Physics</strong></td>
+                                        <td>89.8338023</td>
+                                        <td>86.3258814</td>
+                                        <td>89.8338023</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Chemistry</strong></td>
+                                        <td>89.7505159</td>
+                                        <td>86.5986839</td>
+                                        <td>89.7505159</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Total</strong></td>
+                                        <td>91.4807728</td>
+                                        <td>87.7448032</td>
+                                        <td>91.4807728</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Final-Total NTA Score (in words)</strong></td>
+                                        <td colspan="3">Ninety One point Four Eight Zero Seven Seven Two Eight Only</td>
+                                        <td style="text-align: center; vertical-align: middle; width: 20%;">
+                                            <!-- Sign Fixed -->
+                                            <img src="main-site-photos/vinitsign.jpg" style="width:120px;height:45px">
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpadding="0" cellspacing="1" width="100%" border="0" style="border-collapse: collapse;" class="no_border">
+                                    <tbody><tr>
+                                        <td style="float:left;font-size:8px;font-style:italic;">NTA9100953906871</td>
+                                        <td style="text-align:right;font-size:9px;font-style:italic;display:block;font-weight:800;">82FD3EF678433D46A5C4F0C87D36B6A5</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpadding="3" cellspacing="1" width="100%" align="center" style=" " class="tablecustom">
+                                    <tbody><tr>
+                                        <th rowspan="3" valign="middle" style="text-align:center">Course</th>
+                                        <th colspan="10" valign="middle" style="text-align:center;">ALL INDIA RANK (AIR) based on FINAL NTA Score</th>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2" style="text-align:center;">Common Rank List (CRL)</th>
+                                        <th rowspan="2" style="text-align:center;">GEN-EWS</th>
+                                        <th rowspan="2" style="text-align:center;">Other Backward Class (OBC-NCL)</th>
+                                        <th rowspan="2" style="text-align:center;">Scheduled Caste (SC)</th>
+                                        <th rowspan="2" style="text-align:center;">Scheduled Tribe (ST)</th>
+                                        <th colspan="5" style="text-align:center;">Person with Benchmark Disability (PwBD)</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align:center;">CRL</th>
+                                        <th style="text-align:center;">GEN-EWS</th>
+                                        <th style="text-align:center;">OBC-NCL</th>
+                                        <th style="text-align:center;">SC</th>
+                                        <th style="text-align:center;">ST</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align:center;">B.E./BTech.</th>
+                                        <td style="text-align:center;">132400</td>
+                                        <td style="text-align:center;">---</td>
+                                        <td style="text-align:center;">44418</td>
+                                        <td style="text-align:center;">---</td>
+                                        <td style="text-align:center;">---</td>
+                                        <td style="text-align:center;">---</td>
+                                        <td style="text-align:center;">---</td>
+                                        <td style="text-align:center;">---</td>
+                                        <td style="text-align:center;">---</td>
+                                        <td style="text-align:center;">---</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;font-size:12px;">
+                                <h6> <b>Category-wise Cut-off NTA Score for JEE (Advanced) - 2026 for Paper 1 (B.E/B.Tech)<span style="color:blue;">#</span></b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpadding="3" cellspacing="1" width="100%" align="center" style=" " class="tablecustom">
+                                    <tbody><tr>
+                                        <th colspan="7" style="text-align:center;"> Cut-off for Total NTA Score of Paper 1 (B.E/B.Tech.)</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align:center;"></th>
+                                        <th style="text-align:center;">Common Rank List <br> (CRL)</th>
+                                        <th style="text-align:center;">GEN-EWS</th>
+                                        <th style="text-align:center;">Other Backward Class <br> (OBC-NCL)</th>
+                                        <th style="text-align:center;">Scheduled Caste <br> (SC)</th>
+                                        <th style="text-align:center;">Scheduled Tribe <br> (ST)</th>
+                                        <th style="text-align:center;">Person with Benchmark Disability<br>(PwBD)</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"><b>Category</b></td>
+                                        <td style="text-align:center;">93.4123549</td>
+                                        <td style="text-align:center;">82.4164528</td>
+                                        <td style="text-align:center;">80.9232583</td>
+                                        <td style="text-align:center;">63.9172792</td>
+                                        <td style="text-align:center;">52.0174712</td>
+                                        <td style="text-align:center;">0.0023186</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding:10px;">
+                                <table width="100%" style="font-size:11px !important;">
+                                    <tbody><tr>
+                                        <td>
+                                            <span style="font-size: 12px;font-family:Arial;color:red;"><u>Remarks</u></span> : ELIGIBLE
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="font-family:Arial">
+                                            <b>
+                                                '<span style="color:blue;">#</span>'Candidates eligible for JEE (Advanced)-2026 may register online at <a href="https://jeeadv.nic.in/" target="_blank">https://jeeadv.nic.in </a> <br>
+                                                For seat allocation in IITs, NITs, IIEST, IIITs, and some GFTIs candidates may register online at <a href="https://josaa.nic.in/" target="_blank">https://josaa.nic.in</a>, <a href="https://csab.nic.in/" target="_blank">https://csab.nic.in</a>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" style="font-size: 12px;">
+                                            <strong>Date of declaration of result : 20.04.2026</strong>
+                                        </td>
+                                        <th align="right" style="font-size: 12px; text-align: right;">
+                                           <img src="main-site-photos/NTADirectorSign.jpg" style="width:150px;height:55px">
+                                            <br>
+                                            <strong>Director (NTA)</strong>
+                                        </th>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr id="trIX">
+                            <td align="left" style="font-size:11px;"><br>
+                                <strong><font color="black"> 3. The Percentile scores of a Candidate have been calculated as follows:</font></strong>
+                                <b>
+                                    <center>  <u>100 × Number of candidates who appeared in the ‘Shift’ with raw score EQUAL TO OR LESS than the Score of the candidate in the Shift</u><br> The total number of candidates who appeared in the 'Shift’  </center>
+                                </b>
+                                <ol start="4" style="margin-top: 5px;">
+                                    <li>Total NTA Score is <b> NOT </b> an aggregate or average of the NTA Score of an individual subjects.</li>
+                                    <li>The NTA scores is not the same as the percentage of marks obtained.</li>
+                                    <li>The candidate’s particulars including Category and Person with Benchmark Disability (PwBD) have been indicated as mentioned by the candidate in the online Application Form.</li>
+                                    <li>This electronically generated Scorecard is the official Scorecard published by the NTA.</li>
+                                    <li><b>The National Testing Agency has taken due care while uploading the Scorecard. However, in case of any inadvertent error, the NTA reserves the right to rectify the same at a later stage.</b></li>
+                                </ol>
+                                
+                                <div style="border:1px solid #ccc; padding: 10px; margin-top: 15px;">
+                                    <b>
+                                        PM-Vidyalaxmi Scheme- Students securing merit-based admission in quality Higher Educational Institutions in India can
+                                        avail collateral-free and guarantor-free education loans under the Pradhan Mantry Vidyalaxmi (PM-Vidyalaxmi) Scheme through online portal <a href="https://pmvidyalaxmi.co.in">https://pmvidyalaxmi.co.in</a>. The Scheme also provides credit guarantee and interest subvention
+                                        benefits to eligible meritorious students, as per the Scheme guidelines. The list of eligible institutions and detailed
+                                        scheme guidelines may be accessed at <a href="https://www.education.gov.in/en/scholorships-education-loan-4">https://www.education.gov.in/en/scholorships-education-loan-4</a>.
+                                    </b>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div>
+        </div>
+        
+        <footer id="Ip" class="IpDiv">
+            <span>IP Address - 47.15.75.229</span>
+            <span>ApplicationNo. - 260310293551</span>
+            <span>Date &amp; Time - 23/07/2026 08:10:09</span>
+        </footer>
+    </div>
+</div>
+<!-- MAIN SITE END -->
+
+<script>
+    let currentCaptcha = "";
+
+    function generateCaptcha() {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let captcha = "";
+        for (let i = 0; i < 6; i++) {
+            captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        currentCaptcha = captcha;
+        document.getElementById("captchaCode").innerText = currentCaptcha;
+        document.getElementById("errorMsg").style.display = "none";
+    }
+
+    generateCaptcha();
+
+    function verifyNtaCaptcha() {
+        let input = document.getElementById("userInput").value;
+        if (input === currentCaptcha) {
+            document.getElementById("jee-captcha-overlay").style.display = "none";
+            document.getElementById("my-cloned-site").style.display = "block";
+        } else {
+            document.getElementById("errorMsg").style.display = "block";
+            document.getElementById("userInput").value = "";
+            generateCaptcha();
+        }
+    }
+</script>
+</body></html>

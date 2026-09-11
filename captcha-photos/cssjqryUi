@@ -1,0 +1,66 @@
+
+
+
+<style type="text/css">
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        height: 100%;
+    }
+    .info {
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: 0px;
+        padding: 1px 2px;
+        color: steelblue;
+        font-family: Tahoma;
+    }
+
+    .heading {
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0px;
+        padding: 1px 2px;
+        color: #0066cc;
+        font-family: Tahoma;
+    }
+</style>
+<script type="text/javascript">
+    window.history.forward(); function noBack() { window.history.forward(); }
+    function burstCache() {
+        if (!navigator.onLine) {
+            //window.location = "../SessionExpire.htm";
+        }
+    }
+    history.go(1); /* undo user navigation (ex: IE Back Button) */
+</script>
+<div class="container-fluid" style="min-height: calc(61vh);">
+
+    <div id="" align="center" style="margin-top:10%;">
+        <h1>Not Found</h1>
+        <b>
+            Your session has expired. Please login in again using the link given on the examination portal. <br />
+            For Security reasons,We suggest you to <a href="javascript:window.open('','_self').close();"><u>close</u></a>
+            this window. <br />  It is strongly recommended
+        </b>
+    </div>
+    <div class="cleaner"></div>
+
+</div>
+<!--<div class="list-header clearfix">
+    <h3>Session Expired</h3>-->
+
+<!--</div>
+<div class="list-sfs-holder">
+    <div class="alert alert-error">
+        <h4>Your session has expired. Please login in again using the link given on the examination portal.</h4>
+        <a href="javascript:window.open('','_self').close();">close</a>-->
+
+<!--</div>-->
+
+
+<!--</div>-->
