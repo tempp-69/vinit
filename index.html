@@ -91,7 +91,7 @@
         .cap-footer { background: #002b49; color: white; text-align: center; padding: 12px; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; }
         .cap-footer p { margin: 0; font-size: 13px; }
 
-        /* Mobile Specific Overrides */
+        /* Mobile Specific Overrides (Matches exact narrow screenshot) */
         @media (max-width: 768px) {
             .cap-header { flex-direction: column; align-items: flex-start; padding: 10px 15px; }
             .cap-header-left { width: 100%; margin-bottom: 10px; }
@@ -100,19 +100,26 @@
             .cap-title { font-size: 15px; }
             
             .cap-divider { height: 35px; }
-            .cap-main { max-width: 320px; margin: 30px auto 100px auto; }
-            .cap-box-body { padding: 20px; }
+            
+            /* Reduced width to match 2nd image strictly */
+            .cap-main { max-width: 260px; margin: 30px auto 100px auto; padding: 0; }
+            .cap-box-body { padding: 20px 15px; }
             
             .cap-row { flex-direction: column; align-items: flex-end; margin-bottom: 15px; }
-            .cap-label { width: 100%; text-align: right; padding-right: 0; margin-bottom: 5px; font-weight: normal; }
+            
+            /* Text right aligned and lighter weight */
+            .cap-label { width: 100%; text-align: right; padding-right: 0; margin-bottom: 5px; font-weight: normal; font-size: 13px; }
+            
             .cap-input-col { width: 100%; text-align: right; }
-            .cap-input-col input { width: 100%; box-sizing: border-box; }
+            .cap-input-col input { width: 100%; box-sizing: border-box; padding: 6px 8px; }
             
-            .cap-display-col { width: 100%; justify-content: flex-start; }
+            .cap-display-col { width: 100%; justify-content: flex-start; margin-top: 2px; }
+            .cap-code { font-size: 16px; padding: 6px 12px; }
             
-            .cap-btn-row { flex-direction: column; }
+            .cap-btn-row { flex-direction: column; margin-top: 5px; }
             .cap-btn-spacer { display: none; }
             .cap-btn-col { width: 100%; text-align: left; }
+            .cap-btn { padding: 8px 18px; }
             
             .cap-footer p { font-size: 12px; line-height: 1.5; }
         }
@@ -153,7 +160,7 @@
                 <!-- Enter Captcha Row -->
                 <div class="cap-row">
                     <div class="cap-label">
-                        Enter CAPTCHA<br><span style="color: #198754;">(case sensitive)</span> :
+                        Enter CAPTCHA(<span style="color: #198754;">case</span><br><span style="color: #198754;">sensitive</span>) :
                     </div>
                     <div class="cap-input-col">
                         <input type="text" id="userInput" maxlength="6">
