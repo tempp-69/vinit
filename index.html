@@ -27,7 +27,6 @@
             position: sticky; width: 100%; height: 0vh; margin: 0px auto; z-index: -1;
             display: flex; font-weight: 600; top: 0.5em; left: 0.5em;
         }
-        .logoprint p { font-size: 16px !important; font-weight: 600; }
         .leftImg { height: 55px !important; width: auto; }
         .rightImg { height: 60px !important; width: auto; }
         
@@ -47,21 +46,18 @@
             .tablecustom tr td, .tablecustom tr th { border: 2px solid #ccc !important; font-size: 12px !important; padding: 2px !important; border-collapse: collapse !important; empty-cells: show; padding: 2px; font-size: 10px; }
             footer { position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 12px; }
             .noprint { display: none !important; }
-            .logoprint p.header-text { font-size: 12px !important; font-weight: 600 !important; }
-            .leftImg { height: 55px !important; }
-            .rightImg { height: 55px !important; }
             .container #tableToPrint { width: 100% !important; overflow-x: auto; }
             .watermark { position: absolute; }
-            .logoprint { border-bottom: 0.3em solid #002041 !important; }
+            .result-header { border-bottom: 0.3em solid #002041 !important; flex-direction: row !important; }
+            .res-h-left, .res-h-center, .res-h-right { width: 33% !important; }
         }
 
         /* ========================================================= */
-        /* RESPONSIVE CAPTCHA OVERLAY STYLES (Desktop & Mobile)      */
+        /* RESPONSIVE CAPTCHA OVERLAY STYLES                         */
         /* ========================================================= */
         .cap-wrapper {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999999; overflow-y: auto; font-family: Arial, sans-serif;
         }
-        /* Desktop Base Styles */
         .cap-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
         .cap-header-left, .cap-header-right { width: 25%; min-width: 80px; }
         .cap-header-right { text-align: right; }
@@ -91,37 +87,52 @@
         .cap-footer { background: #002b49; color: white; text-align: center; padding: 12px; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; }
         .cap-footer p { margin: 0; font-size: 13px; }
 
-        /* Mobile Specific Overrides (Matches exact narrow screenshot) */
         @media (max-width: 768px) {
             .cap-header { flex-direction: column; align-items: flex-start; padding: 10px 15px; }
             .cap-header-left { width: 100%; margin-bottom: 10px; }
             .cap-header-right { width: 100%; text-align: left; margin-top: 15px; }
             .cap-header-center { width: 100%; text-align: center; }
             .cap-title { font-size: 15px; }
-            
             .cap-divider { height: 35px; }
-            
-            /* Reduced width to match 2nd image strictly */
             .cap-main { max-width: 260px; margin: 30px auto 100px auto; padding: 0; }
             .cap-box-body { padding: 20px 15px; }
-            
             .cap-row { flex-direction: column; align-items: flex-end; margin-bottom: 15px; }
-            
-            /* Text right aligned and lighter weight */
             .cap-label { width: 100%; text-align: right; padding-right: 0; margin-bottom: 5px; font-weight: normal; font-size: 13px; }
-            
             .cap-input-col { width: 100%; text-align: right; }
             .cap-input-col input { width: 100%; box-sizing: border-box; padding: 6px 8px; }
-            
             .cap-display-col { width: 100%; justify-content: flex-start; margin-top: 2px; }
             .cap-code { font-size: 16px; padding: 6px 12px; }
-            
             .cap-btn-row { flex-direction: column; margin-top: 5px; }
             .cap-btn-spacer { display: none; }
             .cap-btn-col { width: 100%; text-align: left; }
             .cap-btn { padding: 8px 18px; }
-            
             .cap-footer p { font-size: 12px; line-height: 1.5; }
+        }
+
+        /* ========================================================= */
+        /* RESPONSIVE MAIN SITE HEADER (Fix for Squished Text)       */
+        /* ========================================================= */
+        .result-header {
+            background-color: #ffffff; border-bottom: 2em solid #002041; 
+            margin-top: 5px; margin-bottom: 10px; padding: 10px 15px; 
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .res-h-left { width: 25%; text-align: left; }
+        .res-h-center { width: 50%; text-align: center; }
+        .res-h-right { width: 25%; text-align: right; }
+        .res-h-center p { font-size: 16px; font-weight: bold; margin: 0; }
+        
+        @media (max-width: 768px) {
+            .result-header {
+                flex-direction: column; 
+                border-bottom: 25px solid #002041; /* Thick dark blue border at bottom for mobile */
+                padding: 15px 10px;
+            }
+            .res-h-left { width: 100%; text-align: left; margin-bottom: 20px; }
+            .res-h-center { width: 100%; text-align: center; margin-bottom: 20px; }
+            .res-h-right { width: 100%; text-align: center; }
+            .res-h-center p { font-size: 18px; line-height: 1.6; }
+            .res-h-left img, .res-h-right img { max-height: 70px !important; width: auto; }
         }
     </style>
 </head>
@@ -200,20 +211,23 @@
 <!-- ============================================================== -->
 <div id="my-cloned-site" style="display: none;">
     <div class="container-fluid" id="tableToPrint">
-        <div class="row logoprint" style="background-color: #ffffff; border-bottom: 2em solid #002041; margin-top: 5px; margin-bottom: 10px; padding: 5px; display: flex; align-items: center;">
-            <div class="col-4 col-lg-3 col-md-3 col-sm-3">
+        
+        <!-- NEW RESPONSIVE HEADER FOR MAIN SITE -->
+        <div class="result-header">
+            <div class="res-h-left">
                 <img src="main-site-photos/mhrdnew.png" alt="mhrdnew" class="img-fluid leftImg">
             </div>
-            <div class="col-4 col-lg-6 col-md-6 col-sm-6 text-center">
-                <p class="header-text" style="margin:0;">
-                    JOINT ENTRANCE EXAMINATION (Main) – 2026 SESSION 2    <br>
+            <div class="res-h-center">
+                <p>
+                    JOINT ENTRANCE EXAMINATION (Main) – 2026 SESSION 2 <br>
                     NTA SCORE: Paper 1 (B.E./B Tech.)
                 </p>
             </div>
-            <div class="col-4 col-lg-3 col-md-3 col-sm-3" style="text-align:right">
+            <div class="res-h-right">
                 <img src="main-site-photos/NTA.png" alt="NTA" class="img-fluid rightImg">
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="table-responsive">
